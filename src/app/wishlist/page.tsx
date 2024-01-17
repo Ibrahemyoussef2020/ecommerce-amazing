@@ -7,7 +7,7 @@ import toast from "react-hot-toast"
 import { removeFromWishList } from "@/redux/slices"
 import Link from "next/link"
 
-const page = () => {
+const Wishlist = () => {
   const {favoritesData} = useSelector((state:SelectorStateProps| any)=> state.combine.favorites)
   const dispatch = useDispatch()
   console.log(favoritesData);
@@ -53,4 +53,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Wishlist
