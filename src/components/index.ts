@@ -12,6 +12,8 @@ export {default as Products} from './home/Products'
 export {default as Shopping} from './home/Shopping'
 
 export {default as Title} from './cart/Title'
+export {default as PurchaseDetails} from './cart/PurchaseDetails'
+export {default as Purchases} from './cart/Purchases'
 
 export {default as ProfileInfo} from './profile/ProfileInfo'
  

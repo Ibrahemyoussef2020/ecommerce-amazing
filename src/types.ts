@@ -20,11 +20,11 @@ export interface ProductProps {
     description: string;
     image: string;
     price: number;
-    previousPrice?: number;
+    previousPrice: number;
     isNew: boolean;
     brand: string;
-    category?: string;
-    quantity?: number;
+    category: string;
+    quantity: number;
 }
 
 export interface ProductsProps{

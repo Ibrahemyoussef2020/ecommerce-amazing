@@ -1,15 +1,15 @@
 'use client'
 
-import { useSelector } from "react-redux"
+import { Title , Purchases} from "@/components"
+
 
 const Cart = () => {
-  const {productsData} = useSelector((state:any) => state.cart)
-
-
- console.log(productsData);
  
   return (
-    <div>Cart</div>
+    <div className=" p-4 lg:p-6">
+      <Title text='Your Products' className="" />
+      <Purchases />
+    </div>
   )
 }
 

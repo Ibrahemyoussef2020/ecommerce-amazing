@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {ProductsDataProps,ProductProps} from '@/types'
-//import { productsDataStorage } from "@/storage";
+
 
 const initialState : ProductsDataProps  = {
     productsData :[]
@@ -26,7 +26,7 @@ export const cartSlice = createSlice({
               }
         },
         increaseCount:(state:any,action)=>{
-            const existingProduct = state.productsData.find((productData:ProductProps)=> productData?._id === action.payload)
+            const existingProduct = state.productsData.find((productData:ProductProps)=> productData?._id === action.payload._id)
             if (existingProduct) {
                existingProduct.quantity++
             }

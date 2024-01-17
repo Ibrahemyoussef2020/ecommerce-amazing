@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {ProductProps, FavoritesDataProps} from '@/types'
-import { favoritesDataStorage } from "@/storage";
+
 
 
 const initialState:FavoritesDataProps = {
-    favoritesData : favoritesDataStorage
+    favoritesData : []
 }
 
 export const favoriteSlice = createSlice({

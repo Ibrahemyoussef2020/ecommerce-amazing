@@ -16,10 +16,12 @@ const Navbar = () => {
     const pathname = usePathname()
     const {data:session} = useSession()
 
-
-    const {productsData} = useSelector((state:SelectorStateProps)=> state.cart)
-    const {favoritesData} = useSelector((state:SelectorStateProps)=> state.favorites)
       
+const {favoritesData} = useSelector((state:SelectorStateProps | any)=> state.combine.favorites)
+const {productsData} = useSelector((state:SelectorStateProps | any)=> state.combine.cart)
+
+
+
   return (
     <div className="w-full h-20 border-b-[1px] border-b-zinc-500 bg-white text-zinc-600 sticky top-0 z-50 bg-white/80 backdrop-blur-2xl">
         <div className="max-w-screen-xl mx-auto h-full flex items-center justify-between px-4 xl:px-0">

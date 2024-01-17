@@ -12,30 +12,29 @@ import toast, {Toaster} from 'react-hot-toast'
 
 const Product = ({products}:ProductsProps) => {
   const dispatch = useDispatch()
-  const {productsData} = useSelector((state:SelectorStateProps)=> state.cart)
-  const {favoritesData} = useSelector((state:SelectorStateProps)=> state.favorites)
-
+  const {favoritesData} = useSelector((state:SelectorStateProps | any)=> state.combine.favorites)
+  const {productsData} = useSelector((state:SelectorStateProps | any)=> state.combine.cart)
+  
   const isAddedToCart = (_id:number)=>{
-    return productsData?.some((productData:ProductProps)=> productData._id == _id)
+   return productsData?.some((productData:ProductProps)=> productData._id == _id)
   }
 
   const isAddedToWishList = (_id:number)=>{
-    
-    return favoritesData?.some((favoriteData:ProductProps)=> favoriteData._id == _id)
+   return favoritesData?.some((favoriteData:ProductProps)=> favoriteData._id == _id)
   }
 
   const handleAddToCart = (product:ProductProps)=>{
-    dispatch(addToCart(product))
+   dispatch(addToCart(product))
     toast.success(`${product?.title || 'Item'} added To Cart`)
   }
 
   const handleToggleWishLis = (product:ProductProps)=>{
     if (isAddedToWishList(product._id)) {
-      dispatch(removeFromWishList(product._id))
+    dispatch(removeFromWishList(product._id))
       toast.error(`${product?.title || 'Item'} removed from Favoriets`)
     }
     else{
-      dispatch(addToWishList(product))
+     dispatch(addToWishList(product))
       toast.success(`${product?.title || 'Item'} added To Favoriets`)
     }
   }
